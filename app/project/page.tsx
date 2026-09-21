@@ -1,19 +1,15 @@
 import Link from "next/link"
 
-const projects = [
-  { title: "Morrow Coffee", type: "品牌身份 / 包装系统", slug: "morrow" },
-  { title: "Nori Objects", type: "数字商业体验", slug: "nori" },
-  { title: "Common Ground", type: "空间品牌 / 编辑设计", slug: "common-ground" },
-  { title: "Lumen Studio", type: "数字产品 / 品牌网站", slug: "lumen" },
-]
-
-export default function ProjectPage() {
+export default function AboutPage() {
   return (
     <main className="page-shell">
       <header className="topbar container">
         <Link href="/" className="brand-mark">AS<span>F</span></Link>
         <nav className="nav-links" aria-label="主导航">
           <Link href="/project">项目</Link>
+          <Link href="/services">服务</Link>
+          <Link href="/process">流程</Link>
+          <Link href="/journal">观察</Link>
           <Link href="/about">关于</Link>
           <Link href="/contact">联系</Link>
         </nav>
@@ -22,34 +18,23 @@ export default function ProjectPage() {
 
       <section className="page-header container section-block">
         <div>
-          <p className="eyebrow">/ 02 — 作品</p>
-          <h1>项目.</h1>
+          <p className="eyebrow">/ 03 — 工作室</p>
+          <h1>关于.</h1>
         </div>
-        <p className="page-intro">
-          为有长期价值的品牌和产品，打造更清晰、更温暖、更具辨识度的表达与体验。
-        </p>
       </section>
 
-      <section className="container section-block">
-        <div className="filter-row">
-          <span className="filter active">全部</span>
-          <span className="filter">品牌</span>
-          <span className="filter">体验</span>
-          <span className="filter">策略</span>
-        </div>
+      <section className="container section-block about-grid">
+        <p className="about-copy">
+          我是一个多领域的设计师，专注于帮助有野心的品牌与创始人，在被看见的方式上变得 <strong>更清晰、更温暖、更高级</strong>。<br /><br />
+          策略、品牌识别和数字体验在我的工作里相互支撑，彼此成就。
+        </p>
 
-        <div className="work-grid project-grid">
-          {projects.map((project) => (
-            <Link key={project.slug} href={`/project/${project.slug}`} className="work-card project-card">
-              <div className={`work-visual ${project.slug === "morrow" ? "amber" : project.slug === "nori" ? "dark" : project.slug === "common-ground" ? "sky" : "rose"}`}>
-                <span>{project.title.slice(0, 1)}</span>
-              </div>
-              <div className="work-meta">
-                <p>{project.type}</p>
-                <h3>{project.title}</h3>
-              </div>
-            </Link>
-          ))}
+        <div className="contact-item">
+          <h3>专注方向</h3>
+          <p>品牌策略与识别</p>
+          <p>艺术指导与传播</p>
+          <p>产品与数字体验</p>
+          <p>独立 / 精选合作</p>
         </div>
       </section>
     </main>

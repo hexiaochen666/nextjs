@@ -34,6 +34,9 @@ export default function Home() {
 
         <nav className="nav-links" aria-label="主导航">
           <Link href="/project">项目</Link>
+          <Link href="/services">服务</Link>
+          <Link href="/process">流程</Link>
+          <Link href="/journal">观察</Link>
           <Link href="/about">关于</Link>
           <Link href="/contact">联系</Link>
         </nav>
