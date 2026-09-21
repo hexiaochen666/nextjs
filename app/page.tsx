@@ -1,57 +1,78 @@
 import Link from "next/link"
 
 const services = [
-  { name: "品牌战略", text: "定位、叙事、语气与市场竞争力设计。" },
-  { name: "视觉识别", text: "系统化 Logo、包装、平面与品牌资产的视觉框架。" },
-  { name: "数字体验", text: "高转化网站、产品页与体验优化设计方案。" },
+  {
+    name: "Brand Strategy",
+    text: "为品牌建立清晰的定位、叙事与增长方向，实现从想法到市场的转化。",
+  },
+  {
+    name: "Visual Identity",
+    text: "从 Logo、色彩和版式到品牌资产，形成一套稳定、识别度强的视觉系统。",
+  },
+  {
+    name: "Digital Experience",
+    text: "为产品与品牌打造高转化的网站和数字体验，让表达更有说服力。",
+  },
 ]
 
 const metrics = [
   { value: "12+", label: "项目落地" },
-  { value: "8", label: "品牌合作" },
-  { value: "4Y", label: "创作经验" },
+  { value: "08", label: "品牌合作" },
+  { value: "04Y", label: "创作经验" },
 ]
 
 const works = [
-  { name: "Morrow", type: "咖啡品牌重塑", tone: "amber", accent: "MORROW" },
-  { name: "Nori", type: "数字商品体验", tone: "dark", accent: "nori" },
-  { name: "Common Ground", type: "空间品牌系统", tone: "sky", accent: "COMMON" },
-  { name: "Lumen", type: "创意工作室官网", tone: "rose", accent: "LUMEN" },
+  { name: "Morrow", type: "咖啡品牌重塑", tone: "amber", accent: "M" },
+  { name: "Nori", type: "数字商品体验", tone: "dark", accent: "N" },
+  { name: "Common Ground", type: "空间品牌系统", tone: "sky", accent: "C" },
+  { name: "Lumen", type: "创意工作室官网", tone: "rose", accent: "L" },
 ]
 
 const process = [
-  "洞察与定位",
-  "概念与探索",
-  "视觉落地",
-  "迭代与上线",
+  { title: "Discover", text: "深入理解目标、市场与受众，找到品牌真正要解决的问题。" },
+  { title: "Define", text: "梳理品牌定位、叙事和视觉方向，建立逻辑框架。" },
+  { title: "Design", text: "将表达转化为可感知的视觉语言和优秀的数字体验。" },
+  { title: "Deliver", text: "完善迭代并输出高质量的品牌资产与落地方案。" },
 ]
 
 export default function Home() {
   return (
     <main className="page-shell">
       <header className="topbar container">
-        <Link href="/" className="brand-mark">AS<span>F</span></Link>
-        <nav className="nav-links" aria-label="主导航">
+        <Link href="/" className="brand-mark">
+          AS<span>F</span>
+        </Link>
+
+        <nav className="nav-links" aria-label="Main navigation">
           <Link href="/project">Projects</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
-        <Link href="/contact" className="button button-small button-light">Start a project</Link>
+
+        <Link href="/contact" className="button button-small button-light">
+          Start a project
+        </Link>
       </header>
 
       <section className="hero container">
         <div className="hero-copy">
           <p className="eyebrow">Independent design studio / brand systems</p>
           <h1>
-            Design that turns<br />
+            Design that turns
+            <br />
             ambition into <span>clarity</span>.
           </h1>
           <p className="lead">
-            我帮助创始人与品牌把复杂的想法转化成有辨识度、可持续增长的视觉语言与数字体验。
+            我帮助创始人和品牌把复杂的方向，转成一致、可持续的视觉语言与数字体验。
           </p>
+
           <div className="hero-actions">
-            <Link href="/project" className="button button-primary">View selected work</Link>
-            <Link href="/about" className="text-link">Learn more</Link>
+            <Link href="/project" className="button button-primary">
+              View selected work
+            </Link>
+            <Link href="/about" className="text-link">
+              Learn more
+            </Link>
           </div>
 
           <div className="metrics-row">
@@ -64,7 +85,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Abstract design visuals">
+        <div className="hero-visual" aria-label="Abstract design composition">
           <div className="hero-orbit orbit-one" />
           <div className="hero-orbit orbit-two" />
           <div className="hero-badge">
@@ -98,10 +119,11 @@ export default function Home() {
           <p className="eyebrow">/ 01 — capabilities</p>
           <h2>可持续增长的设计系统</h2>
         </div>
+
         <div className="service-grid">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <article key={service.name} className="service-card">
-              <span className="card-index">0{services.indexOf(service) + 1}</span>
+              <span className="card-index">0{index + 1}</span>
               <h3>{service.name}</h3>
               <p>{service.text}</p>
             </article>
@@ -116,7 +138,9 @@ export default function Home() {
               <p className="eyebrow">/ 02 — selected projects</p>
               <h2>精选案例</h2>
             </div>
-            <Link href="/project" className="text-link">See all work</Link>
+            <Link href="/project" className="text-link">
+              See all work
+            </Link>
           </div>
 
           <div className="work-grid">
@@ -143,10 +167,10 @@ export default function Home() {
 
         <div className="process-grid">
           {process.map((step, index) => (
-            <div key={step} className="process-card">
+            <div key={step.title} className="process-card">
               <span>{`0${index + 1}`}</span>
-              <h3>{step}</h3>
-              <p>将目标、用户与品牌价值统一在一个清晰的执行框架中。</p>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
             </div>
           ))}
         </div>
@@ -171,7 +195,9 @@ export default function Home() {
             <p className="eyebrow">Ready to build</p>
             <h2>打造更清晰、更有影响力的品牌体验。</h2>
           </div>
-          <Link href="/contact" className="button button-primary">Let’s talk</Link>
+          <Link href="/contact" className="button button-primary">
+            Let’s talk
+          </Link>
         </div>
       </section>
     </main>
