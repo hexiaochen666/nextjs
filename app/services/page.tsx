@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+export const revalidate = 60
+
 const services = [
   { title: "品牌策略", text: "定位、叙事与增长方向的清晰结构，帮助品牌在市场中更稳地被看见。" },
   { title: "视觉识别", text: "从字形、色彩、平面资产到品牌手册，建立统一而高级的表达系统。" },

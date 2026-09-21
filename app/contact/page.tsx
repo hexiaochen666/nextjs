@@ -1,13 +1,8 @@
 import Link from "next/link"
 
-const projects = [
-  { title: "Morrow Coffee", type: "品牌身份 / 包装系统", slug: "morrow" },
-  { title: "Nori Objects", type: "数字商业体验", slug: "nori" },
-  { title: "Common Ground", type: "空间品牌 / 编辑设计", slug: "common-ground" },
-  { title: "Lumen Studio", type: "数字产品 / 品牌网站", slug: "lumen" },
-]
+export const revalidate = 60
 
-export default function ProjectPage() {
+export default function ContactPage() {
   return (
     <main className="page-shell">
       <header className="topbar container">
@@ -25,34 +20,24 @@ export default function ProjectPage() {
 
       <section className="page-header container section-block">
         <div>
-          <p className="eyebrow">/ 02 — 作品</p>
-          <h1>项目.</h1>
+          <p className="eyebrow">/ 04 — 联系</p>
+          <h1>联系.</h1>
         </div>
-        <p className="page-intro">
-          为有长期价值的品牌和产品，打造更清晰、更温暖、更具辨识度的表达与体验。
-        </p>
       </section>
 
-      <section className="container section-block">
-        <div className="filter-row">
-          <span className="filter active">全部</span>
-          <span className="filter">品牌</span>
-          <span className="filter">体验</span>
-          <span className="filter">策略</span>
+      <section className="container section-block contact-shell">
+        <div className="contact-card">
+          <p className="eyebrow">让我们一起塑造更 memorable 的存在</p>
+          <h2>把你的下一步，<br />变得清晰而有分量。</h2>
+          <p className="contact-copy">无论是品牌焕新、产品发布，还是更具体验感的数字项目，我都很乐意听听你正在构建什么。</p>
+          <a className="email-link" href="mailto:hello@asf.design">hello@asf.design</a>
         </div>
 
-        <div className="work-grid project-grid">
-          {projects.map((project) => (
-            <Link key={project.slug} href={`/project/${project.slug}`} className="work-card project-card">
-              <div className={`work-visual ${project.slug === "morrow" ? "amber" : project.slug === "nori" ? "dark" : project.slug === "common-ground" ? "sky" : "rose"}`}>
-                <span>{project.title.slice(0, 1)}</span>
-              </div>
-              <div className="work-meta">
-                <p>{project.type}</p>
-                <h3>{project.title}</h3>
-              </div>
-            </Link>
-          ))}
+        <div className="contact-item">
+          <h3>可接项目</h3>
+          <p>接受精选合作</p>
+          <p>支持远程协作 / 全球</p>
+          <p>48 小时内回复</p>
         </div>
       </section>
     </main>

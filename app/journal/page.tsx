@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+export const revalidate = 60
+
 const articles = [
   {
     tag: "品牌观察",

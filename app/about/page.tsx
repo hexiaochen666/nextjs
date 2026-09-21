@@ -1,29 +1,8 @@
 import Link from "next/link"
 
-const steps = [
-  {
-    step: "01",
-    title: "对话与理解",
-    text: "我们先深入理解品牌的历史、定位和目标受众，再梳理真正需要被解决的问题。",
-  },
-  {
-    step: "02",
-    title: "方向与框架",
-    text: "把抽象愿景整理成清晰方向，包括品牌语言、信息结构和表达重点。",
-  },
-  {
-    step: "03",
-    title: "设计落地",
-    text: "把策略转化成视觉、空间与体验的具体方案，确保每处细节都统一且有分量。",
-  },
-  {
-    step: "04",
-    title: "迭代与增长",
-    text: "在投放与使用中持续观察反馈，让品牌保持清晰、稳定且更具生命力。",
-  },
-]
+export const revalidate = 60
 
-export default function ProcessPage() {
+export default function AboutPage() {
   return (
     <main className="page-shell">
       <header className="topbar container">
@@ -41,32 +20,23 @@ export default function ProcessPage() {
 
       <section className="page-header container section-block">
         <div>
-          <p className="eyebrow">/ 03 — 流程</p>
-          <h1>流程.</h1>
+          <p className="eyebrow">/ 03 — 工作室</p>
+          <h1>关于.</h1>
         </div>
-        <p className="page-intro">
-          我们不是一次性做视觉，而是从方向、设计与落地一起推进，确保结果更稳、更长久。
+      </section>
+
+      <section className="container section-block about-grid">
+        <p className="about-copy">
+          我是一个多领域的设计师，专注于帮助有野心的品牌与创始人，在被看见的方式上变得 <strong>更清晰、更温暖、更高级</strong>。<br /><br />
+          策略、品牌识别和数字体验在我的工作里相互支撑，彼此成就。
         </p>
-      </section>
 
-      <section className="container section-block">
-        <div className="timeline">
-          {steps.map((item) => (
-            <div key={item.step} className="timeline-item">
-              <strong>{item.step}</strong>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="container section-block page-cta">
-        <div className="cta-panel">
-          <h2>清晰的方向，往往比更大的预算更有价值。</h2>
-          <Link href="/contact" className="button button-primary">联系我</Link>
+        <div className="contact-item">
+          <h3>专注方向</h3>
+          <p>品牌策略与识别</p>
+          <p>艺术指导与传播</p>
+          <p>产品与数字体验</p>
+          <p>独立 / 精选合作</p>
         </div>
       </section>
     </main>
