@@ -1,47 +1,36 @@
 import Link from "next/link"
 
 const services = [
-  {
-    name: "Brand Strategy",
-    text: "为品牌建立清晰的定位、叙事与增长方向，实现从想法到市场的转化。",
-  },
-  {
-    name: "Visual Identity",
-    text: "从 Logo、色彩和版式到品牌资产，形成一套稳定、识别度强的视觉系统。",
-  },
-  {
-    name: "Digital Experience",
-    text: "为产品与品牌打造高转化的网站和数字体验，让表达更有说服力。",
-  },
+  { name: "Brand Direction", text: "精确的市场定位与品牌叙事，给品牌建立一套更高级的表达基底。" },
+  { name: "Visual Identity", text: "从标志、字体、色彩、视觉语言到品牌资产，形成统一的高端识别体系。" },
+  { name: "Digital Craft", text: "提升品牌在数字世界中的存在感，打造让人愿意停留并信任的产品体验。" },
 ]
 
 const metrics = [
-  { value: "12+", label: "项目落地" },
-  { value: "08", label: "品牌合作" },
-  { value: "04Y", label: "创作经验" },
+  { value: "12+", label: "signature launches" },
+  { value: "08", label: "brand partners" },
+  { value: "4Y", label: "creative practice" },
 ]
 
 const works = [
-  { name: "Morrow", type: "咖啡品牌重塑", tone: "amber", accent: "M" },
-  { name: "Nori", type: "数字商品体验", tone: "dark", accent: "N" },
-  { name: "Common Ground", type: "空间品牌系统", tone: "sky", accent: "C" },
-  { name: "Lumen", type: "创意工作室官网", tone: "rose", accent: "L" },
+  { title: "Morrow", type: "cafe brand identity", tone: "amber", initial: "M" },
+  { title: "Nori", type: "digital commerce", tone: "dark", initial: "N" },
+  { title: "Common Ground", type: "spatial concept", tone: "sky", initial: "C" },
+  { title: "Lumen", type: "studio website", tone: "rose", initial: "L" },
 ]
 
 const process = [
-  { title: "Discover", text: "深入理解目标、市场与受众，找到品牌真正要解决的问题。" },
-  { title: "Define", text: "梳理品牌定位、叙事和视觉方向，建立逻辑框架。" },
-  { title: "Design", text: "将表达转化为可感知的视觉语言和优秀的数字体验。" },
-  { title: "Deliver", text: "完善迭代并输出高质量的品牌资产与落地方案。" },
+  { title: "Discover", text: "对品牌、本体与市场进行深度定义，建立清晰而明确的方向。" },
+  { title: "Define", text: "形成品牌语言、叙事结构与视觉基准，统一工作的核心逻辑。" },
+  { title: "Design", text: "从概念到落地，设计所有关键触点，强化品牌的高级感和一致性。" },
+  { title: "Deliver", text: "为品牌提供可延展的系统与执行方案，确保长期价值持续增长。" },
 ]
 
 export default function Home() {
   return (
     <main className="page-shell">
       <header className="topbar container">
-        <Link href="/" className="brand-mark">
-          AS<span>F</span>
-        </Link>
+        <Link href="/" className="brand-mark">AS<span>F</span></Link>
 
         <nav className="nav-links" aria-label="Main navigation">
           <Link href="/project">Projects</Link>
@@ -56,14 +45,14 @@ export default function Home() {
 
       <section className="hero container">
         <div className="hero-copy">
-          <p className="eyebrow">Independent design studio / brand systems</p>
+          <p className="eyebrow">Maison of brand and digital craft</p>
           <h1>
-            Design that turns
+            We design <span>clarity</span>
             <br />
-            ambition into <span>clarity</span>.
+            into luxury.
           </h1>
           <p className="lead">
-            我帮助创始人和品牌把复杂的方向，转成一致、可持续的视觉语言与数字体验。
+            ASF 为品牌、空间与数字产品打造更值得被记住的存在方式。我们帮助客户把复杂想法，转成高级、统一、可持续的表达。
           </p>
 
           <div className="hero-actions">
@@ -85,39 +74,40 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Abstract design composition">
+        <div className="hero-visual" aria-label="Luxury brand aesthetic composition">
           <div className="hero-orbit orbit-one" />
           <div className="hero-orbit orbit-two" />
           <div className="hero-badge">
-            <span>AS</span>
-            <em>F</em>
+            AS<em>F</em>
           </div>
           <div className="hero-note">Ideas in motion</div>
         </div>
       </section>
 
-      <div className="marquee">
+      <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
           <span>Brand Strategy</span>
           <span>✦</span>
-          <span>Visual Identity</span>
-          <span>✦</span>
-          <span>Digital Product</span>
-          <span>✦</span>
           <span>Art Direction</span>
+          <span>✦</span>
+          <span>Identity Systems</span>
+          <span>✦</span>
+          <span>Luxury Experience</span>
           <span>✦</span>
           <span>Brand Strategy</span>
           <span>✦</span>
-          <span>Visual Identity</span>
+          <span>Art Direction</span>
           <span>✦</span>
-          <span>Digital Product</span>
+          <span>Identity Systems</span>
+          <span>✦</span>
+          <span>Luxury Experience</span>
         </div>
       </div>
 
       <section className="services container section-block">
         <div className="section-head">
           <p className="eyebrow">/ 01 — capabilities</p>
-          <h2>可持续增长的设计系统</h2>
+          <h2>Luxury thinking, precise execution.</h2>
         </div>
 
         <div className="service-grid">
@@ -136,22 +126,20 @@ export default function Home() {
           <div className="section-head split-head">
             <div>
               <p className="eyebrow">/ 02 — selected projects</p>
-              <h2>精选案例</h2>
+              <h2>Signature work.</h2>
             </div>
-            <Link href="/project" className="text-link">
-              See all work
-            </Link>
+            <Link href="/project" className="text-link">See portfolio</Link>
           </div>
 
           <div className="work-grid">
             {works.map((work) => (
-              <article key={work.name} className="work-card">
+              <article key={work.title} className="work-card">
                 <div className={`work-visual ${work.tone}`}>
-                  <span>{work.accent}</span>
+                  <span>{work.initial}</span>
                 </div>
                 <div className="work-meta">
                   <p>{work.type}</p>
-                  <h3>{work.name}</h3>
+                  <h3>{work.title}</h3>
                 </div>
               </article>
             ))}
@@ -162,7 +150,7 @@ export default function Home() {
       <section className="process container section-block">
         <div className="section-head">
           <p className="eyebrow">/ 03 — process</p>
-          <h2>从理解到落地的完整流程</h2>
+          <h2>From strategy to presence.</h2>
         </div>
 
         <div className="process-grid">
@@ -180,7 +168,7 @@ export default function Home() {
         <div className="quote-box">
           <p className="eyebrow">/ 04 — client feedback</p>
           <blockquote>
-            “ASF 让我们的品牌从散乱的想法变成真正能被市场认可的表达，视觉和体验都更有说服力。”
+            “ASF helped us refine the brand into something sharper, calmer, and undeniably more premium. Every touchpoint now feels intentional.”
           </blockquote>
           <div className="quote-person">
             <strong>Rena Chen</strong>
@@ -191,10 +179,7 @@ export default function Home() {
 
       <section className="cta container section-block">
         <div className="cta-panel">
-          <div>
-            <p className="eyebrow">Ready to build</p>
-            <h2>打造更清晰、更有影响力的品牌体验。</h2>
-          </div>
+          <h2>Build a brand presence that feels rare and memorable.</h2>
           <Link href="/contact" className="button button-primary">
             Let’s talk
           </Link>

@@ -26,7 +26,7 @@ export default function ProjectPage() {
           <h1>Projects.</h1>
         </div>
         <p className="page-intro">
-          我通过品牌系统、网站设计和体验策略，帮助企业把价值传达得更清晰、更温暖、更有说服力。
+          Crafted identities and digital experiences for brands that value precision, intimacy and long-term recognition.
         </p>
       </section>
 
@@ -34,7 +34,7 @@ export default function ProjectPage() {
         <div className="filter-row">
           <span className="filter active">All</span>
           <span className="filter">Branding</span>
-          <span className="filter">UX/UI</span>
+          <span className="filter">Experience</span>
           <span className="filter">Strategy</span>
         </div>
 

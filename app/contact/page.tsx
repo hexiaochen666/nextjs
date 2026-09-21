@@ -22,17 +22,17 @@ export default function ContactPage() {
 
       <section className="container section-block contact-shell">
         <div className="contact-card">
-          <p className="eyebrow">Let’s build something memorable</p>
-          <h2>有一个想法？<br />我很想听听。</h2>
-          <p className="contact-copy">无论你正在构建新品牌，还是想让现有的产品和体验更清晰、更强有力，都欢迎联系我。</p>
+          <p className="eyebrow">Let’s build a memorable presence</p>
+          <h2>Bring your next idea into focus.</h2>
+          <p className="contact-copy">For brand refreshes, product launches, or immersive digital experiences, I’d love to hear what you are building.</p>
           <a className="email-link" href="mailto:hello@asf.design">hello@asf.design</a>
         </div>
 
         <div className="contact-item">
           <h3>Availability</h3>
-          <p>Q4 2026 — open for selected projects</p>
+          <p>Open for selected collaborations</p>
           <p>Remote-friendly / Worldwide</p>
-          <p>Response time: within 48 hours</p>
+          <p>Fast response within 48 hours</p>
         </div>
       </section>
     </main>
