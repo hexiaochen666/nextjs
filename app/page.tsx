@@ -47,7 +47,7 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow">品牌与数字工艺的私人工作室</p>
           <h1>
-            我们让 <span>清晰</span>
+            让 <span>清晰</span>
             <br />
             成为高级感。
           </h1>
