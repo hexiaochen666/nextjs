@@ -1,755 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
-
-:root {
-  --bg: #f6f1ea;
-  --bg-strong: #efe7df;
-  --panel: #ffffff;
-  --ink: #171412;
-  --muted: rgba(23, 20, 18, 0.7);
-  --line: rgba(23, 20, 18, 0.12);
-  --orange: #ff6c42;
-  --orange-soft: rgba(255, 108, 66, 0.14);
-  --dark: #191d1d;
-  --sky: #bfd7d6;
-  --rose: #efc0b4;
-  --amber: #f5c272;
-  --shadow: 0 20px 60px rgba(18, 14, 10, 0.08);
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(255,108,66,0.08), transparent 24%),
-    linear-gradient(180deg, var(--bg) 0%, #f2eee9 100%);
-  color: var(--ink);
-  font-family: "Inter", sans-serif;
-}
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-button, input, textarea { font: inherit; }
-
-.page-shell {
-  min-height: 100vh;
-  padding-bottom: 80px;
-}
-
-.container {
-  width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-.topbar {
-  height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--line);
-}
-
-.brand-mark {
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: -0.12em;
-}
-
-.brand-mark span { color: var(--orange); }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-  color: var(--muted);
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.button:hover, .text-link:hover, .filter:hover { transform: translateY(-1px); }
-
-.button-small {
-  padding: 0.8rem 1.25rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.button-light {
-  background: rgba(23,20,18,0.06);
-  border: 1px solid var(--line);
-}
-
-.button-primary {
-  padding: 1rem 1.5rem;
-  background: var(--ink);
-  color: white;
-  box-shadow: var(--shadow);
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.text-link {
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 600;
-  position: relative;
-  padding-bottom: 0.25rem;
-}
-
-.text-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--ink);
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 38px;
-  align-items: center;
-  padding: 72px 0 44px;
-}
-
-.eyebrow {
-  margin: 0 0 18px;
-  color: var(--muted);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-h1, h2, h3, p, blockquote {
-  margin-top: 0;
-}
-
-.hero h1 {
-  font-size: clamp(4rem, 7vw, 7rem);
-  line-height: 0.92;
-  letter-spacing: -0.08em;
-  margin-bottom: 18px;
-}
-
-.hero h1 span {
-  color: var(--orange);
-}
-
-.lead {
-  max-width: 600px;
-  color: var(--muted);
-  font-size: 1.06rem;
-  line-height: 1.9;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-top: 26px;
-}
-
-.metrics-row {
-  margin-top: 36px;
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.metric-card {
-  min-width: 130px;
-  padding: 18px 20px;
-  background: rgba(255,255,255,0.46);
-  border: 1px solid var(--line);
-  backdrop-filter: blur(8px);
-  border-radius: 22px;
-}
-
-.metric-card strong {
-  display: block;
-  font-size: 2rem;
-  letter-spacing: -0.08em;
-  line-height: 1;
-}
-
-.metric-card span {
-  display: block;
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero-visual {
-  position: relative;
-  height: 560px;
-  border-radius: 32px;
-  background: linear-gradient(135deg, rgba(255,108,66,0.92), rgba(255,164,115,0.84));
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-.hero-orbit {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(23,20,18,0.4);
-}
-
-.orbit-one {
-  width: 120%;
-  height: 56%;
-  left: -10%;
-  top: 18%;
-  transform: rotate(-25deg);
-}
-
-.orbit-two {
-  width: 120%;
-  height: 64%;
-  left: -10%;
-  top: 38%;
-  transform: rotate(-12deg);
-}
-
-.hero-badge {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: clamp(4.2rem, 6vw, 8rem);
-  font-weight: 900;
-  letter-spacing: -0.14em;
-  color: rgba(255,255,255,0.9);
-}
-
-.hero-badge em {
-  color: var(--ink);
-  font-style: normal;
-}
-
-.hero-note {
-  position: absolute;
-  left: 28px;
-  bottom: 28px;
-  color: rgba(23,20,18,0.8);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.marquee {
-  position: relative;
-  overflow: hidden;
-  background: var(--ink);
-  color: #f5efe8;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.marquee-track {
-  width: max-content;
-  display: flex;
-  align-items: center;
-  gap: 34px;
-  padding: 16px 0;
-  white-space: nowrap;
-  animation: marquee 18s linear infinite;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.section-block {
-  padding-top: 96px;
-}
-
-.section-head {
-  margin-bottom: 32px;
-}
-
-.section-head h2 {
-  margin: 0;
-  font-size: clamp(2.3rem, 3vw, 4rem);
-  letter-spacing: -0.07em;
-}
-
-.split-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 20px;
-}
-
-.service-grid,
-.process-grid,
-.work-grid {
-  display: grid;
-  gap: 22px;
-}
-
-.service-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.service-card,
-.process-card,
-.quote-box,
-.cta-panel {
-  background: rgba(255,255,255,0.46);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  box-shadow: var(--shadow);
-}
-
-.service-card {
-  padding: 28px;
-}
-
-.card-index {
-  display: inline-block;
-  color: var(--orange);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  margin-bottom: 26px;
-}
-
-.service-card h3 {
-  margin-bottom: 12px;
-  font-size: 1.5rem;
-  letter-spacing: -0.06em;
-}
-
-.service-card p,
-.process-card p,
-.work-meta p,
-.work-meta small,
-.page-intro,
-.quote-person span,
-.about-copy,
-.contact-copy,
-.contact-item span {
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.showcase {
-  padding-top: 96px;
-}
-
-.work-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.work-card {
-  display: block;
-  padding: 18px 18px 0;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.38);
-  border: 1px solid var(--line);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.work-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-
-.work-visual {
-  height: 320px;
-  border-radius: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.work-visual.amber { background: linear-gradient(135deg, var(--amber), #f3a951); }
-.work-visual.dark { background: linear-gradient(135deg, #1c2020, #2f3131); color: white; }
-.work-visual.sky { background: linear-gradient(135deg, var(--sky), #8eb6b2); }
-.work-visual.rose { background: linear-gradient(135deg, var(--rose), #d38d77); }
-
-.work-visual span {
-  font-size: clamp(2.8rem, 4vw, 5rem);
-  font-weight: 900;
-  letter-spacing: -0.12em;
-}
-
-.work-meta {
-  padding: 18px 4px 22px;
-}
-
-.work-meta p {
-  margin-bottom: 6px;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.work-meta h3 {
-  margin: 0;
-  font-size: clamp(1.6rem, 2vw, 2.4rem);
-  letter-spacing: -0.06em;
-}
-
-.work-meta small {
-  display: block;
-  margin-top: 8px;
-  font-size: 0.92rem;
-}
-
-.process-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.process-card {
-  padding: 28px 24px;
-}
-
-.process-card span {
-  color: var(--orange);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.process-card h3 {
-  margin: 18px 0 12px;
-  font-size: 1.4rem;
-  letter-spacing: -0.05em;
-}
-
-.testimonial {
-  padding-top: 96px;
-}
-
-.quote-box {
-  padding: 34px 32px;
-}
-
-blockquote {
-  margin: 0;
-  font-size: clamp(1.6rem, 2.3vw, 3rem);
-  line-height: 1.2;
-  letter-spacing: -0.06em;
-  max-width: 980px;
-}
-
-.quote-person {
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.quote-person strong {
-  font-size: 1rem;
-}
-
-.cta-panel {
-  padding: 32px 36px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-
-.cta-panel h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3vw, 3.2rem);
-  letter-spacing: -0.07em;
-  max-width: 700px;
-}
-
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 30px;
-  padding-top: 56px;
-}
-
-.page-header h1 {
-  margin: 0;
-  font-size: clamp(3.5rem, 7vw, 7rem);
-  letter-spacing: -0.09em;
-}
-
-.page-intro {
-  max-width: 450px;
-  font-size: 1rem;
-}
-
-.filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-
-.filter {
-  display: inline-flex;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.2);
-  color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.filter.active {
-  background: var(--ink);
-  color: white;
-  border-color: var(--ink);
-}
-
-.project-card {
-  padding: 18px 18px 18px;
-}
-
-.detail-shell {
-  padding-top: 48px;
-}
-
-.detail-hero {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 28px;
-  align-items: center;
-}
-
-.detail-summary {
-  padding: 32px;
-  background: rgba(255,255,255,0.45);
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  box-shadow: var(--shadow);
-}
-
-.detail-summary h1 {
-  font-size: clamp(2.5rem, 4vw, 5rem);
-  letter-spacing: -0.08em;
-  margin-bottom: 16px;
-}
-
-.detail-list {
-  display: grid;
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.detail-item {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-}
-
-.detail-item strong {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.detail-visual {
-  min-height: 420px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, var(--orange), #f8b55c);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(4rem, 7vw, 8rem);
-  font-weight: 900;
-  letter-spacing: -0.12em;
-  box-shadow: var(--shadow);
-}
-
-.detail-section {
-  padding-top: 60px;
-}
-
-.detail-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.detail-panel {
-  background: rgba(255,255,255,0.46);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 30px;
-}
-
-.detail-panel h3 {
-  margin: 0 0 14px;
-  font-size: 1.6rem;
-  letter-spacing: -0.06em;
-}
-
-.detail-panel p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 30px;
-  align-items: start;
-}
-
-.about-copy {
-  font-size: clamp(1.5rem, 2vw, 2.3rem);
-  line-height: 1.5;
-  letter-spacing: -0.04em;
-}
-
-.about-copy strong { color: var(--orange); }
-
-.contact-shell {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.contact-card {
-  background: var(--ink);
-  color: white;
-  border-radius: 30px;
-  padding: 34px;
-  min-height: 300px;
-}
-
-.contact-card h2 {
-  margin: 0 0 16px;
-  font-size: clamp(2.4rem, 4vw, 4.3rem);
-  letter-spacing: -0.08em;
-}
-
-.contact-copy {
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 18px;
-}
-
-.email-link {
-  display: inline-block;
-  margin-top: 18px;
-  color: var(--orange);
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.contact-item {
-  background: rgba(255,255,255,0.45);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 26px;
-}
-
-.contact-item h3 {
-  margin: 0 0 20px;
-  font-size: 1.6rem;
-  letter-spacing: -0.06em;
-}
-
-.contact-item p {
-  margin: 0;
-  color: var(--muted);
-}
-
-@media (max-width: 920px) {
-  .hero,
-  .page-header,
-  .detail-hero,
-  .about-grid,
-  .contact-shell {
-    grid-template-columns: 1fr;
-    display: grid;
-  }
-
-  .service-grid,
-  .process-grid,
-  .work-grid,
-  .detail-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .topbar {
-    height: auto;
-    padding: 18px 0;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .nav-links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    width: min(100% - 24px, 1180px);
-  }
-
-  .nav-links {
-    gap: 18px;
-    font-size: 0.65rem;
-  }
-
-  .hero {
-    padding-top: 42px;
-  }
-
-  .hero-visual {
-    height: 410px;
-  }
-
-  .service-grid,
-  .process-grid,
-  .work-grid,
-  .detail-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .split-head,
-  .cta-panel,
-  .page-header {
-    display: block;
-  }
-
-  .button-primary {
-    margin-top: 18px;
-  }
-
-  .cta-panel {
-    padding: 24px 20px;
-  }
+import Link from "next/link"
+
+const projects: Record<string, { name: string; type: string; year: string; tone: string; description: string; challenge: string; solution: string }> = {
+  morrow: {
+    name: "Morrow Coffee",
+    type: "Brand identity / Packaging",
+    year: "2024",
+    tone: "amber",
+    description: "为一家精品咖啡品牌建立更有温度、更具辨识度的品牌系统。",
+    challenge: "Morrow 需要在拥挤的精品咖啡市场中建立自己的语气，同时保持品牌的手作感与现代感。",
+    solution: "我们以晨光、咖啡豆和日常仪式为灵感，建立了完整的标志、包装、空间物料和数字触点。",
+  },
+  nori: {
+    name: "Nori Objects",
+    type: "E-commerce experience",
+    year: "2024",
+    tone: "dark",
+    description: "用更清晰的数字体验，让设计家居产品更自然地被发现和购买。",
+    challenge: "原有电商页面信息层级混乱，产品价值无法被快速理解，影响了用户的购买决策。",
+    solution: "重新组织产品叙事、筛选和购买路径，让材质、细节与使用场景成为体验的核心。",
+  },
+  "common-ground": {
+    name: "Common Ground",
+    type: "Spatial identity / Editorial",
+    year: "2023",
+    tone: "sky",
+    description: "为共享空间建立兼具文化属性与社区温度的品牌系统。",
+    challenge: "空间需要同时服务创作者、访客和社区成员，品牌必须开放，却不能失去自己的个性。",
+    solution: "通过灵活的字标、模块化网格和一套可持续扩展的出版物系统，建立统一而有弹性的表达。",
+  },
+  lumen: {
+    name: "Lumen Studio",
+    type: "Digital product / Web design",
+    year: "2023",
+    tone: "rose",
+    description: "为创意工作室打造一套更大胆、更有传播力的线上体验。",
+    challenge: "Lumen 的作品很有个性，但原网站缺少清晰的项目结构，也无法体现团队的工作方式。",
+    solution: "设计以作品为中心的浏览体验，结合动态排版、案例叙事和更明确的合作入口。",
+  },
+}
+
+export function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({ slug }))
+}
+
+export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const project = projects[slug] ?? projects.morrow
+
+  return (
+    <main className="page-shell">
+      <header className="topbar container">
+        <Link href="/" className="brand-mark">AS<span>F</span></Link>
+        <nav className="nav-links" aria-label="Main navigation">
+          <Link href="/project">Projects</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </nav>
+        <Link href="/contact" className="button button-small button-light">Start a project</Link>
+      </header>
+
+      <section className="detail-shell container">
+        <Link href="/project" className="text-link">← Back to projects</Link>
+        <div className="detail-hero detail-section">
+          <div className="detail-summary">
+            <p className="eyebrow">/ Selected project</p>
+            <h1>{project.name}</h1>
+            <p className="page-intro">{project.description}</p>
+            <div className="detail-list">
+              <div className="detail-item"><strong>Services</strong><span>{project.type}</span></div>
+              <div className="detail-item"><strong>Year</strong><span>{project.year}</span></div>
+              <div className="detail-item"><strong>Studio</strong><span>ASF / Shanghai</span></div>
+            </div>
+          </div>
+          <div className={`detail-visual ${project.tone}`} aria-label={`${project.name} visual`}>
+            <span>{project.name.slice(0, 1)}</span>
+          </div>
+        </div>
+
+        <div className="detail-grid detail-section">
+          <article className="detail-panel"><p className="eyebrow">01 — The challenge</p><h3>让问题变得清晰</h3><p>{project.challenge}</p></article>
+          <article className="detail-panel"><p className="eyebrow">02 — The approach</p><h3>从策略走向表达</h3><p>{project.solution}</p></article>
+        </div>
+      </section>
+    </main>
+  )
 }
