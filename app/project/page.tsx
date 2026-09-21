@@ -1,10 +1,10 @@
 import Link from "next/link"
 
 const projects = [
-  { title: "Morrow Coffee", type: "Brand identity / Packaging", slug: "morrow" },
-  { title: "Nori Objects", type: "E-commerce experience", slug: "nori" },
-  { title: "Common Ground", type: "Spatial identity / Editorial", slug: "common-ground" },
-  { title: "Lumen Studio", type: "Digital product / Web design", slug: "lumen" },
+  { title: "Morrow Coffee", type: "品牌身份 / 包装系统", slug: "morrow" },
+  { title: "Nori Objects", type: "数字商业体验", slug: "nori" },
+  { title: "Common Ground", type: "空间品牌 / 编辑设计", slug: "common-ground" },
+  { title: "Lumen Studio", type: "数字产品 / 品牌网站", slug: "lumen" },
 ]
 
 export default function ProjectPage() {
@@ -12,30 +12,30 @@ export default function ProjectPage() {
     <main className="page-shell">
       <header className="topbar container">
         <Link href="/" className="brand-mark">AS<span>F</span></Link>
-        <nav className="nav-links" aria-label="Main navigation">
-          <Link href="/project">Projects</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+        <nav className="nav-links" aria-label="主导航">
+          <Link href="/project">项目</Link>
+          <Link href="/about">关于</Link>
+          <Link href="/contact">联系</Link>
         </nav>
-        <Link href="/contact" className="button button-small button-light">Start a project</Link>
+        <Link href="/contact" className="button button-small button-light">开始项目</Link>
       </header>
 
       <section className="page-header container section-block">
         <div>
-          <p className="eyebrow">/ 02 — selected work</p>
-          <h1>Projects.</h1>
+          <p className="eyebrow">/ 02 — 作品</p>
+          <h1>项目.</h1>
         </div>
         <p className="page-intro">
-          Crafted identities and digital experiences for brands that value precision, intimacy and long-term recognition.
+          为有长期价值的品牌和产品，打造更清晰、更温暖、更具辨识度的表达与体验。
         </p>
       </section>
 
       <section className="container section-block">
         <div className="filter-row">
-          <span className="filter active">All</span>
-          <span className="filter">Branding</span>
-          <span className="filter">Experience</span>
-          <span className="filter">Strategy</span>
+          <span className="filter active">全部</span>
+          <span className="filter">品牌</span>
+          <span className="filter">体验</span>
+          <span className="filter">策略</span>
         </div>
 
         <div className="work-grid project-grid">
