@@ -1,18 +1,18 @@
 import Link from "next/link"
 
-const projectData = [
-  { slug: "morrow", name: "Morrow Coffee", type: "品牌重塑 / 2024", tone: "amber", accent: "MORROW", summary: "为一家精品咖啡品牌打造更有层次的市场识别与服务体验。" },
-  { slug: "nori", name: "Nori Objects", type: "电商体验 / 2024", tone: "dark", accent: "nori", summary: "让文艺家居商品从被动展示转为更强的购买决策加持。" },
-  { slug: "common-ground", name: "Common Ground", type: "空间品牌 / 2023", tone: "sky", accent: "COMMON", summary: "建立一个兼具文化属性和共享价值的空间品牌系统。" },
-  { slug: "lumen", name: "Lumen Studio", type: "创意工作室 / 2023", tone: "rose", accent: "LUMEN", summary: "为创意团队打造更现代、更具传播力的官方网站。" },
+const projects = [
+  { title: "Morrow Coffee", type: "Brand identity / Packaging", slug: "morrow" },
+  { title: "Nori Objects", type: "E-commerce experience", slug: "nori" },
+  { title: "Common Ground", type: "Spatial identity / Editorial", slug: "common-ground" },
+  { title: "Lumen Studio", type: "Digital product / Web design", slug: "lumen" },
 ]
 
-export default function ProjectsPage() {
+export default function ProjectPage() {
   return (
     <main className="page-shell">
       <header className="topbar container">
         <Link href="/" className="brand-mark">AS<span>F</span></Link>
-        <nav className="nav-links" aria-label="主导航">
+        <nav className="nav-links" aria-label="Main navigation">
           <Link href="/project">Projects</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
@@ -39,15 +39,14 @@ export default function ProjectsPage() {
         </div>
 
         <div className="work-grid project-grid">
-          {projectData.map((project) => (
+          {projects.map((project) => (
             <Link key={project.slug} href={`/project/${project.slug}`} className="work-card project-card">
-              <div className={`work-visual ${project.tone}`}>
-                <span>{project.accent}</span>
+              <div className={`work-visual ${project.slug === "morrow" ? "amber" : project.slug === "nori" ? "dark" : project.slug === "common-ground" ? "sky" : "rose"}`}>
+                <span>{project.title.slice(0, 1)}</span>
               </div>
               <div className="work-meta">
                 <p>{project.type}</p>
-                <h3>{project.name}</h3>
-                <small>{project.summary}</small>
+                <h3>{project.title}</h3>
               </div>
             </Link>
           ))}
